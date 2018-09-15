@@ -45,7 +45,7 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
 //        http.httpBasic()  //指定http认证方式为basic登录
         http.formLogin()  //指定http认证方式为表单登录
 //                .loginPage("/signIn.html")  //当需要自定义登录页面时就要配置此页面，作为登录入口
-                .loginPage("/authentication/require")  //替换掉页面，适配不同类型客户端返回不同数据的要求
+                .loginPage("/authentication/require")  //替换掉上面配置的页面，适配不同类型（页面型和数据型）请求返回不同数据的要求
                 .loginProcessingUrl("/authentication/form")
                 .and()
                 .authorizeRequests()  //对请求授权
